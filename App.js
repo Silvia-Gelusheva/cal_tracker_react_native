@@ -1,36 +1,46 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { Text, View } from 'react-native';
 
+import AddMeal from './components/adMeal/AddMeal';
+import MealSection from './components/MealSection';
 import { StatusBar } from 'expo-status-bar';
+import { styles } from './styles';
+import { useState } from 'react';
 
 export default function App() {
+  const [showAddMeal, setShowAddMeal] = useState(false)
+
+  const addMealPressHandler = () => {
+    setShowAddMeal(true);
+  };
   return (
-    <View style={styles.container}>
-      <View>
-        {/* Header */}
-        <Text>Calorie Tracker </Text>
-      </View>
-      <View>
-        {/* Overview */}
-        <Text>Calorie Overview </Text>
-      </View>
-      <View>
-        {/* MealSection */}
-        <Text>List of Meals </Text>
-      </View>
-      <View>
-        {/* AppBar */}
-        <Text>App Bar </Text>
-      </View>
+
+    <SafeAreaProvider>
       <StatusBar style="auto" />
-    </View>
+      <SafeAreaView style={styles.container}>
+        {/* Header */}
+        <View style={[styles.section, styles.header]}>
+          <Text style={styles.heading}>Calorie Tracker </Text>
+        </View>
+
+        {/* Overview */}
+        <View style={[styles.section, styles.header]}>
+          <Text>Calorie Overview </Text>
+        </View>
+
+        {/* MealSection */}
+        <MealSection onAddMeal={addMealPressHandler} />
+        {/* {showAddMeal && <AddMeal onClose={() => setShowAddMeal(false)} />} */}
+        <AddMeal visible={showAddMeal} onClose={() => setShowAddMeal(false)} />
+
+        {/* AppBar */}
+        <View style={[styles.endSection, styles.header]}>
+          <Text >App Bar </Text>
+        </View>
+        <StatusBar style="auto" />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
