@@ -1,12 +1,12 @@
 import { Text, TouchableOpacity, View } from 'react-native';
 
-import { styles } from '../styles';
+import { styles } from '../../styles'
 
-export default function MealSection({ onAddMeal }) {
+export default function Dinner({ onAddMeal }) {
     return (
         <View style={[styles.section]}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 }}>
-                <Text >Meals </Text>
+                <Text >Dinner </Text>
                 <TouchableOpacity
                     onPress={onAddMeal}
                     activeOpacity={0.7}

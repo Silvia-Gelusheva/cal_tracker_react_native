@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.background,
         alignItems: 'center',
         justifyContent: 'space-between',
+        gap: 16,
     },
     endSection: {
         width: '100%',
@@ -19,6 +20,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         paddingVertical: 20,
+
     },
     section: {
         boxShadow: [{ offsetX: 2, offsetY: 3, blurRadius: 4, color: 'rgba(200, 200, 200, 0.53)' }],
@@ -28,8 +30,6 @@ export const styles = StyleSheet.create({
         borderRadius: 15,
         width: '90%',
         padding: 10,
-    },
-    header: {
 
     },
     mealSection: {
