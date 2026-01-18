@@ -1,50 +1,53 @@
-import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 import CircularProgress from 'react-native-circular-progress-indicator'
+import React from 'react'
 
 export default function MacroNutrients() {
     return (
         <View style={styles.section}>
-
-            {/* Title */}
             <Text style={styles.title}>Macronutrients</Text>
 
-            {/* Circles Row */}
             <View style={styles.circleRow}>
 
                 <View style={styles.circleItem}>
                     <CircularProgress
-                        radius={50}
+                        radius={40}
                         value={50}
                         fontSize={16}
                         activeStrokeColor="#4e74efff"
                         inActiveStrokeColor="#8b7d7dff"
                         inActiveStrokeOpacity={0.2}
+                        activeStrokeWidth={6}
+                        inActiveStrokeWidth={6}
                     />
                     <Text style={styles.label}>Protein</Text>
                 </View>
 
                 <View style={styles.circleItem}>
                     <CircularProgress
-                        radius={50}
+                        radius={40}
                         value={20}
                         fontSize={16}
                         activeStrokeColor="#5edc0bff"
                         inActiveStrokeColor="#8b7d7dff"
                         inActiveStrokeOpacity={0.2}
+                        activeStrokeWidth={6}
+                        inActiveStrokeWidth={6}
                     />
                     <Text style={styles.label}>Carbs</Text>
                 </View>
 
                 <View style={styles.circleItem}>
                     <CircularProgress
-                        radius={50}
+                        radius={40}
                         value={40}
                         fontSize={16}
                         activeStrokeColor="#e78f14ff"
                         inActiveStrokeColor="#8b7d7dff"
                         inActiveStrokeOpacity={0.2}
+                        activeStrokeWidth={6}
+                        inActiveStrokeWidth={6}
                     />
                     <Text style={styles.label}>Fats</Text>
                 </View>
@@ -53,6 +56,7 @@ export default function MacroNutrients() {
         </View>
     )
 }
+
 const styles = StyleSheet.create({
     section: {
         backgroundColor: '#ffffffff',
@@ -76,13 +80,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        gap: 12,
     },
-
     circleItem: {
         alignItems: 'center',
         flex: 1,
+        marginHorizontal: 6,
     },
-
     label: {
         marginTop: 8,
         fontSize: 12,

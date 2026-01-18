@@ -30,18 +30,19 @@ export default function CalorieRemaining() {
             {/* Stats Row */}
             <View style={styles.statsRow}>
                 <View style={styles.statItem}>
-                    <Text style={styles.statValue}>1500</Text>
                     <Text style={styles.statLabel}>Goal</Text>
+                    <Text style={styles.statValue}>1500</Text>
                 </View>
 
                 <View style={styles.statItem}>
-                    <Text style={styles.statValue}>800</Text>
                     <Text style={styles.statLabel}>Food</Text>
+                    <Text style={styles.statValue}>800</Text>
+
                 </View>
 
                 <View style={styles.statItem}>
-                    <Text style={styles.statValue}>300</Text>
                     <Text style={styles.statLabel}>Exercise</Text>
+                    <Text style={styles.statValue}>300</Text>
                 </View>
             </View>
 
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
 
     caloriesValue: {
         fontSize: 40,
-        fontWeight: '700',
+        fontWeight: '500',
         color: '#111827',
     },
 
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
 
     statValue: {
         fontSize: 16,
-        fontWeight: '600',
+        fontWeight: '500',
         color: '#111827',
     },
 

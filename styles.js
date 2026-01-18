@@ -8,10 +8,14 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.background,
+    },
+
+    scrollContent: {
         alignItems: 'center',
-        justifyContent: 'space-between',
+        paddingVertical: 16,
         gap: 16,
     },
+
     endSection: {
         width: '100%',
         backgroundColor: colors.white,
@@ -40,17 +44,26 @@ export const styles = StyleSheet.create({
     heading: {
         textAlign: 'center',
         fontSize: 26,
-        fontWeight: 'bold'
+        fontWeight: '600'
     },
     addButton: {
         paddingHorizontal: 12,
         paddingVertical: 6,
-        backgroundColor: '#edf2f7',
+        backgroundColor: '#ffffffff',
         borderRadius: 8,
     },
     addText: {
         fontSize: 20,
         fontWeight: 'bold',
     },
-
+    appBar: {
+        width: '100%',
+        backgroundColor: colors.white,
+        borderWidth: 1,
+        borderColor: '#edf2f7',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: 20,
+    },
 });
