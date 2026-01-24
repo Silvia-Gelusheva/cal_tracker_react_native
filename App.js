@@ -7,45 +7,56 @@ import CalorieRemaining from './components/ProgressBars/CalorieRemaining'
 import Dinner from './components/Meals/Dinner'
 import Lunch from './components/Meals/Lunch'
 import MacroNutrients from './components/ProgressBars/MacroNutrients'
+import { NavigationContainer } from '@react-navigation/native'
 import Snack from './components/Meals/Snack'
 import { StatusBar } from 'expo-status-bar'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { styles } from './styles'
 import { useState } from 'react'
 
 export default function App() {
+  const Stack = createNativeStackNavigator()
   const [showAddMeal, setShowAddMeal] = useState(false)
 
   return (
-    <SafeAreaProvider>
+    <NavigationContainer>
       <StatusBar style="auto" />
-      <SafeAreaView style={styles.container}>
+      <Stack.Navigator>
+        <Stack.Screen />
+        <SafeAreaProvider>
+          <SafeAreaView style={styles.container}>
 
-        {/* Header */}
-        <View style={styles.appBar}>
-          <Text style={styles.heading}>CalTrack</Text>
-        </View>
+            {/* Header */}
+            <View style={styles.appBar}>
+              <Text style={styles.heading}>CalTrack</Text>
+            </View>
 
-        {/* Scrollable Content */}
-        <ScrollView
-          contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
-        >
-          <CalorieRemaining />
-          <MacroNutrients />
+            {/* Scrollable Content */}
+            <ScrollView
+              contentContainerStyle={styles.scrollContent}
+              showsVerticalScrollIndicator={false}
+            >
+              <CalorieRemaining />
+              <MacroNutrients />
 
-          <Breakfast onAddMeal={() => setShowAddMeal(true)} />
-          <Lunch onAddMeal={() => setShowAddMeal(true)} />
-          <Dinner onAddMeal={() => setShowAddMeal(true)} />
-          <Snack onAddMeal={() => setShowAddMeal(true)} />
-        </ScrollView>
+              <Breakfast onAddMeal={() => setShowAddMeal(true)} />
+              <Lunch onAddMeal={() => setShowAddMeal(true)} />
+              <Dinner onAddMeal={() => setShowAddMeal(true)} />
+              <Snack onAddMeal={() => setShowAddMeal(true)} />
+            </ScrollView>
 
-        {/* App Bar */}
-        <View style={styles.appBar}>
-          <Text>App Bar</Text>
-        </View>
+            {/* App Bar */}
+            <View style={styles.appBar}>
+              <Text>App Bar</Text>
+            </View>
 
-        <AddMeal visible={showAddMeal} onClose={() => setShowAddMeal(false)} />
-      </SafeAreaView>
-    </SafeAreaProvider>
+            <AddMeal visible={showAddMeal} onClose={() => setShowAddMeal(false)} />
+
+          </SafeAreaView>
+        </SafeAreaProvider>
+
+      </Stack.Navigator>
+
+    </NavigationContainer >
   )
 }

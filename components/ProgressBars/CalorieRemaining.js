@@ -20,7 +20,7 @@ export default function CalorieRemaining() {
                     progress={0.7}
                     width={null}
                     height={8}
-                    color="#4e74efff"
+                    color="#000000ff"
                     borderRadius={10}
                     unfilledColor="#e5e7eb"
                     borderWidth={0}
